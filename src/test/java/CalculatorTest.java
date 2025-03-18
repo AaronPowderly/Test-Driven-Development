@@ -25,5 +25,15 @@ public class CalculatorTest {
         Exception ex = assertThrows(IllegalArgumentException.class, ()-> {myCalc.add(Integer.MAX_VALUE, 4);});
         assertEquals("This value is too big", ex.getMessage());
     }
-
+    @Test
+    void testSubtractSuccess()
+    {
+        assertEquals(2,myCalc.subtract(6,4));
+    }
+    @Test
+    void testSubtractFail()
+    {
+        Exception ex = assertThrows(IllegalStateException.class, ()-> {myCalc.subtract(4,6);});
+        assertEquals("This value is too small", ex.getMessage());
+    }
 }

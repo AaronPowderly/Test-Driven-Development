@@ -8,6 +8,16 @@ public class Calculator {
         {
             throw new IllegalArgumentException("This value is too big");
         }
+
+        return (int) result;
+    }
+    public int subtract(int firstNum, int secondNum)
+    {
+        long result = (long) firstNum - secondNum;
+        if(result < 0)
+        {
+            throw new IllegalStateException("This value is too small");
+        }
         return (int) result;
     }
 }
